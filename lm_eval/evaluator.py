@@ -271,6 +271,12 @@ def evaluate(
                 if doc_id not in overlaps[task_name]:
                     vals[(task_name, metric + decontaminate_suffix)].append(value)
 
+    # Compare results
+    # import pickle
+    # with open('log_probs_fp32.pkl', 'wb') as f:
+    #     pickle.dump(process_res_queue, f)
+    # with open('correctness_fp32.pkl', 'wb') as f:
+    #     pickle.dump(vals, f)
     # aggregate results
     for (task_name, metric), items in vals.items():
         task = task_dict[task_name]
